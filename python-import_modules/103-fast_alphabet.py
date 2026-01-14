@@ -1,3 +1,2 @@
 #!/usr/bin/python3
-for i in range(65, 91):
-    print("{:c}".format(i), end="\n" if (i == 90) else "")
+print(*(chr(i)for i in range(65,91)),sep='',end='\n')
