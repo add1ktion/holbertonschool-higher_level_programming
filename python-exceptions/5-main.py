@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-number_keys = __import__('5-number_keys').number_keys
+raise_exception = __import__('5-raise_exception').raise_exception
 
-a_dictionary = { 'language': "C", 'number': 13, 'track': "Low level" }
-nb_keys = number_keys(a_dictionary)
-print("Number of keys: {:d}".format(nb_keys))
+try:
+    raise_exception()
+except TypeError as te:
+    print("Exception raised")

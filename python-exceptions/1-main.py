@@ -1,8 +1,17 @@
 #!/usr/bin/python3
-search_replace = __import__('1-search_replace').search_replace
+safe_print_integer = __import__('1-safe_print_integer').safe_print_integer
 
-my_list = [1, 2, 3, 4, 5, 4, 2, 1, 1, 4, 89]
-new_list = search_replace(my_list, 2, 89)
+value = 89
+has_been_print = safe_print_integer(value)
+if not has_been_print:
+    print("{} is not an integer".format(value))
 
-print(new_list)
-print(my_list)
+value = -89
+has_been_print = safe_print_integer(value)
+if not has_been_print:
+    print("{} is not an integer".format(value))
+
+value = "School"
+has_been_print = safe_print_integer(value)
+if not has_been_print:
+    print("{} is not an integer".format(value))

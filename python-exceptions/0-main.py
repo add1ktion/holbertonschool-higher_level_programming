@@ -1,12 +1,11 @@
 #!/usr/bin/python3
-square_matrix_simple = __import__('0-square_matrix_simple').square_matrix_simple
+safe_print_list = __import__('0-safe_print_list').safe_print_list
 
-matrix = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9]
-]
+my_list = [1, 2, 3, 4, 5]
 
-new_matrix = square_matrix_simple(matrix)
-print(new_matrix)
-print(matrix)
+nb_print = safe_print_list(my_list, 2)
+print("nb_print: {:d}".format(nb_print))
+nb_print = safe_print_list(my_list, len(my_list))
+print("nb_print: {:d}".format(nb_print))
+nb_print = safe_print_list(my_list, len(my_list) + 2)
+print("nb_print: {:d}".format(nb_print))

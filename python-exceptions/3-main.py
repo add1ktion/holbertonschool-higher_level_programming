@@ -1,7 +1,12 @@
 #!/usr/bin/python3
-common_elements = __import__('3-common_elements').common_elements
+safe_print_division = __import__('3-safe_print_division').safe_print_division
 
-set_1 = { "Python", "C", "Javascript" }
-set_2 = { "Bash", "C", "Ruby", "Perl" }
-c_set = common_elements(set_1, set_2)
-print(sorted(list(c_set)))
+a = 12
+b = 2
+result = safe_print_division(a, b)
+print("{:d} / {:d} = {}".format(a, b, result))
+
+a = 12
+b = 0
+result = safe_print_division(a, b)
+print("{:d} / {:d} = {}".format(a, b, result))

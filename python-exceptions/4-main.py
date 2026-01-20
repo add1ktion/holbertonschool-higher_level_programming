@@ -1,7 +1,14 @@
 #!/usr/bin/python3
-only_diff_elements = __import__('4-only_diff_elements').only_diff_elements
+list_division = __import__('4-list_division').list_division
 
-set_1 = { "Python", "C", "Javascript" }
-set_2 = { "Bash", "C", "Ruby", "Perl" }
-od_set = only_diff_elements(set_1, set_2)
-print(sorted(list(od_set)))
+my_l_1 = [10, 8, 4]
+my_l_2 = [2, 4, 4]
+result = list_division(my_l_1, my_l_2, max(len(my_l_1), len(my_l_2)))
+print(result)
+
+print("--")
+
+my_l_1 = [10, 8, 4, 4]
+my_l_2 = [2, 0, "H", 2, 7]
+result = list_division(my_l_1, my_l_2, max(len(my_l_1), len(my_l_2)))
+print(result)

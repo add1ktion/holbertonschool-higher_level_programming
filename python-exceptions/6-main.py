@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-print_sorted_dictionary = __import__('6-print_sorted_dictionary').print_sorted_dictionary
+raise_exception_msg = __import__('6-raise_exception_msg').raise_exception_msg
 
-a_dictionary = { 'language': "C", 'Number': 89, 'track': "Low level", 'ids': [1, 2, 3] }
-print_sorted_dictionary(a_dictionary)
+try:
+    raise_exception_msg("C is fun")
+except NameError as ne:
+    print(ne)
