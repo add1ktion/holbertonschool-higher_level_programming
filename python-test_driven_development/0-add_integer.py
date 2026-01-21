@@ -1,14 +1,26 @@
 #!/usr/bin/python3
-"""Adds 2 integers. a and b must be integers or floats,
-otherwise raise a TypeError exception.
-a and b must be first casted to integers (if float) and return int sum."""
+"""
+Adds 2 integers.
+
+Prototype: def add_integer(a, b=98):
+- a and b must be integers or floats, otherwise raise a TypeError
+  exception with the message `a must be an integer` or `b must be an integer`
+- a and b must be first casted to integers (if they are floats)
+- Returns an integer: the addition of a and b
+- You are not allowed to import any module
+"""
 
 
 def add_integer(a, b=98):
     """
-    Adds 2 integers.
-    Args: a (int, float): first number. b (int, float): second number.
-    Return: int: Sum of a + b.
+    Adds two integers.
+
+    Args:
+        a (int, float): First number.
+        b (int, float): Second number (default 98).
+
+    Returns:
+        int: Sum of a and b.
     """
 
     if not isinstance(a, (int, float)):
