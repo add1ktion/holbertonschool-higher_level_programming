@@ -21,35 +21,27 @@ def matrix_divided(matrix, div):
     Returns:
         list: New divided matrix
     """
+    msg1 = "matrix must be a matrix (list of lists) of integers/floats"
+    msg2 = "Each row of the matrix must have the same size"
+    msg3 = "div must be a number"
 
-    if not isinstance(matrix, list) or matrix == []:
-        raise TypeError
-        ("matrix must be a matrix (list of lists) of integers/floats")
-
-    for row in matrix:
-        if not isinstance(row, list):
-            raise TypeError
-            ("matrix must be a matrix (list of lists) of integers/floats")
-        for el in row:
-            if not isinstance(el, (int, float)):
-                raise TypeError
-                ("matrix must be a matrix (list of lists) of integers/floats")
+    if not isinstance(matrix, list) or len(matrix) == 0:
+        raise TypeError(msg1)
+    if not isinstance(matrix[0], list):
+        raise TypeError(msg1)
 
     first_len = len(matrix[0])
     for row in matrix:
-        if len(row) != first_len:
-            raise TypeError
-            ("Each row of the matrix must have the same size")
+        if not isinstance(row, list) or len(row) != first_len:
+            raise TypeError(msg2)
+        for el in row:
+            if not isinstance(el, (int, float)):
+                raise TypeError(msg1)
 
     if not isinstance(div, (int, float)):
-        raise TypeError("div must be a number")
+        raise TypeError(msg3)
     if div == 0:
         raise ZeroDivisionError("division by zero")
 
-    new_matrix = []
-    for row in matrix:
-        tmp = []
-        for el in row:
-            tmp.append(round(el / div, 2))
-        new_matrix.append(tmp)
+    new_matrix = [[round(el / div, 2) for el in row] for row in matrix]
     return new_matrix
