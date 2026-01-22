@@ -1,15 +1,13 @@
 #!/usr/bin/python3
-"""
-Text indentation module
+"""Prints a text with 2 new lines after each of these characters: ., ? and:
 """
 
 
 def text_indentation(text):
-    """
-    Prints a text with 2 new lines after each of these characters: ., ? and :
+    """Prints a text with 2 new lines after each . ? :
 
     Args:
-        text (str): The input text to process
+        text (str): The input text
 
     Raises:
         TypeError: If text is not a string
@@ -17,15 +15,16 @@ def text_indentation(text):
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
-    skip_space = False
-    for c in text:
+    i = 0
+    while i < len(text):
+        c = text[i]
         if c in '.?:':
             print(c, end="")
             print()
-            skip_space = True
-            continue
-        if skip_space and c == ' ':
-            skip_space = False
             print()
+            i += 1
+            while i < len(text) and text[i].isspace():
+                i += 1
         else:
             print(c, end="")
+            i += 1
