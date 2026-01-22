@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""
-Adds 2 integers.
+"""Adds 2 integers.
 
 Prototype: def add_integer(a, b=98):
 - a and b must be integers or floats, otherwise raise a TypeError
@@ -27,4 +26,6 @@ def add_integer(a, b=98):
         raise TypeError("a must be an integer")
     if not isinstance(b, (int, float)):
         raise TypeError("b must be an integer")
+    a = int(float(a))
+    b = int(float(b))
     return int(a) + int(b)
