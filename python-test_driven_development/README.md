@@ -1,71 +1,58 @@
-# Python - Hello, World
+# Python - Test-driven development
 
-- **[0. Hello, print](./2-print.py)**
+- **[0. Integers addition](./0-add_integer.py,)**
 
-  - Write a Python script that prints exactly "Programming is like building a multilingual puzzle, followed by a new line.
-    - Use the function print
+- Write a function that adds 2 integers.
+  - Prototype: def add_integer(a, b=98):
+  - a and b must be integers or floats, otherwise raise a TypeError exception with the message a must be an integer or b must be an integer
+  - a and b must be first casted to integers if they are float
+  - Returns an integer: the addition of a and b
+  - You are not allowed to import any module
 
-- **[1. Print integer](./3-print_number.py)**
+- **[1. Divide a matrix](./2-matrix_divided.py)**
 
-  - Complete this source code in order to print the integer stored in the variable number, followed by Battery street, followed by a new line.
-    - You can find the source code here
-    - The output of the script should be:
-      - the number, followed by Battery street,
-      - followed by a new line
-    - You are not allowed to cast the variable number into a string
-    - Your code must be 3 lines long
-    - You have to use f-strings tips
+- Write a function that divides all elements of a matrix.
+  - Prototype: def matrix_divided(matrix, div):
+  - matrix must be a list of lists of integers or floats, otherwise raise a TypeError exception with the message matrix must be a matrix (list of lists) of integers/floats
+  - Each row of the matrix must be of the same size, otherwise raise a TypeError exception with the message Each row of the matrix must have the same size
+  - div must be a number (integer or float), otherwise raise a TypeError exception with the message div must be a number
+  - div can’t be equal to 0, otherwise raise a ZeroDivisionError exception with the message division by zero
+  - All elements of the matrix should be divided by div, rounded to 2 decimal places
+  - Returns a new matrix
+  - You are not allowed to import any module
 
-- **[2. Print float](./4-print_float.py)** 
+- **[2. Say my name](./3-say_my_name.py)** 
 
-  - Complete the source code in order to print the float stored in the variable number with a precision of 2 digits.
-      - You can find the source code here
-      - The output of the program should be:
-          - Float:, followed by the float with only 2 digits
-          - followed by a new line
-      - You are not allowed to cast number to string
-      - You have to use f-strings
+- Write a function that prints My name is <first name> <last name>
+  - Prototype: def say_my_name(first_name, last_name=""):
+  - first_name and last_name must be strings otherwise, raise a TypeError exception with the message first_name must be a string or last_name must be a string
+  - You are not allowed to import any module
 
-- **[3. Print string](./5-print_string.py)**
+- **[3. Print square](./4-print_square.py)**
 
-  - Complete this source code in order to print 3 times a string stored in the variable str, followed by its first 9 characters.
-  - You can find the source code here
-  - The output of the program should be:
-    - 3 times the value of str
-    - followed by a new line
-    - followed by the 9 first characters of str
-    - followed by a new line
-  - You are not allowed to use any loops or conditional statement
-  - Your program should be maximum 5 lines long
+- Write a function that prints a square with the character #.
+  - Prototype: def print_square(size):
+  - size is the size length of the square
+  - size must be an integer, otherwise raise a TypeError exception with the message size must be an integer
+  - if size is less than 0, raise a ValueError exception with the message size must be >= 0
+  - if size is a float and is less than 0, raise a TypeError exception with the message size must be an integer
+  - You are not allowed to import any module
 
-- **[4. Play with strings](./6-concat.py)**
+- **[4. Text indentation](./5-text_indentation.py)**
 
-  - Complete this source code to print Welcome to Holberton School!
-    - You can find the source code here
-    - You are not allowed to use any loops or conditional statements.
-    - You have to use the variables str1 and str2 in your new line of code
-    - Your program should be exactly 5 lines long
+- Write a function that prints a text with 2 new lines after each of these characters: ., ? and :
+  - Prototype: def text_indentation(text):
+  - text must be a string, otherwise raise a TypeError exception with the message text must be a string
+  - There should be no space at the beginning or at the end of each printed line
+  - You are not allowed to import any module
 
-- **[5. Copy - Cut - Paste](./7-edges.py)**
+- **[5. Max integer - Unittest](./tests/6-max_integer_test.py)**
 
-  - Complete this source code
-    - You can find the source code here
-    - You are not allowed to use any loops or conditional statements
-    - Your program should be exactly 8 lines long
-    - word_first_3 should contain the first 3 letters of the variable word
-    - word_last_2 should contain the last 2 letters of the variable word
-    - middle_word should contain the value of the variable word without the first and last letters
-   
-- **[6. Create a new sentence](./8-concat_edges.py)**
-
-  - Complete this source code to print object-oriented programming with Python, followed by a new line.
-    - You can find the source code here
-    - You are not allowed to use any loops or conditional statements
-    - Your program should be exactly 5 lines long
-    - You are not allowed to create new variables
-    - You are not allowed to use string literals
-   
-- **[7. Easter Egg](./9-eater_egg.py)**
-
-  - Write a Python script that prints “The Zen of Python”, by TimPeters, followed by a new line.
-    - Your script should be maximum 98 characters long (please check with wc -m 9-easter_egg.py)
+- Since the beginning you have been creating “Interactive tests”. For this exercise, you will add Unittests.
+- In this task, you will write unittests for the function def max_integer(list=[]):.
+  - Your test file should be inside a folder tests
+  - You have to use the unittest module
+  - Your test file should be python files (extension: .py)
+  - Your test file should be executed by using this command: python3 -m unittest tests.6-max_integer_test
+  - All tests you make must be passable by the function below
+  - We strongly encourage you to work together on test cases, so that you don’t miss any edge case

@@ -1,71 +1,81 @@
-# Python - Hello, World
+# Python - Exceptions
 
-- **[0. Hello, print](./2-print.py)**
+- **[0. Safe list printing](./0-safe_print_list.py)**
 
-  - Write a Python script that prints exactly "Programming is like building a multilingual puzzle, followed by a new line.
-    - Use the function print
+- Write a function that prints x elements of a list.
+  - Prototype: def safe_print_list(my_list=[], x=0):
+  - my_list can contain any type (integer, string, etc.)
+  - All elements must be printed on the same line followed by a new line.
+  - x represents the number of elements to print
+  - x can be bigger than the length of my_list
+  - Returns the real number of elements printed
+  - You have to use try: / except:
+  - You are not allowed to import any module
+  - You are not allowed to use len()
 
-- **[1. Print integer](./3-print_number.py)**
+- **[1. Safe printing of an integers list](./1-safe_print_integer.py)**
 
-  - Complete this source code in order to print the integer stored in the variable number, followed by Battery street, followed by a new line.
-    - You can find the source code here
-    - The output of the script should be:
-      - the number, followed by Battery street,
-      - followed by a new line
-    - You are not allowed to cast the variable number into a string
-    - Your code must be 3 lines long
-    - You have to use f-strings tips
+- Write a function that prints an integer with "{:d}".format().
+  - Prototype: def safe_print_integer(value):
+  - value can be any type (integer, string, etc.)
+  - The integer should be printed followed by a new line
+  - Returns True if value has been correctly printed (it means the value is an integer)
+  - Otherwise, returns False
+  - You have to use try: / except:
+  - You have to use "{:d}".format() to print as integer
+  - You are not allowed to import any module
+  - You are not allowed to use type()
 
-- **[2. Print float](./4-print_float.py)** 
+- **[2. Print and count integers](./2-safe_print_list_integers.py)** 
 
-  - Complete the source code in order to print the float stored in the variable number with a precision of 2 digits.
-      - You can find the source code here
-      - The output of the program should be:
-          - Float:, followed by the float with only 2 digits
-          - followed by a new line
-      - You are not allowed to cast number to string
-      - You have to use f-strings
+- Write a function that prints the first x elements of a list and only integers.
+  - Prototype: def safe_print_list_integers(my_list=[], x=0):
+  - my_list can contain any type (integer, string, etc.)
+  - All integers have to be printed on the same line followed by a new line - other type of value in the list must be skipped (in silence).
+  - x represents the number of elements to access in my_list
+  - x can be bigger than the length of my_list - if it’s the case, an exception is expected to occur
+  - Returns the real number of integers printed
+  - You have to use try: / except:
+  - You have to use "{:d}".format() to print an integer
+  - You are not allowed to import any module
+  - You are not allowed to use len()
 
-- **[3. Print string](./5-print_string.py)**
+- **[3. Integers division with debug](./3-safe_print_division.py)**
 
-  - Complete this source code in order to print 3 times a string stored in the variable str, followed by its first 9 characters.
-  - You can find the source code here
-  - The output of the program should be:
-    - 3 times the value of str
-    - followed by a new line
-    - followed by the 9 first characters of str
-    - followed by a new line
-  - You are not allowed to use any loops or conditional statement
-  - Your program should be maximum 5 lines long
+- Write a function that divides 2 integers and prints the result.
+  - Prototype: def safe_print_division(a, b):
+  - You can assume that a and b are integer
+  - The result of the division should print on the finally: section preceded by Inside result:
+  - Returns the value of the division, otherwise: None
+  - You have to use try: / except: / finally:
+  - You have to use "{}".format() to print the result
+  - You are not allowed to import any module
 
-- **[4. Play with strings](./6-concat.py)**
+- **[4. Divide a list](./4-list_division.py)**
 
-  - Complete this source code to print Welcome to Holberton School!
-    - You can find the source code here
-    - You are not allowed to use any loops or conditional statements.
-    - You have to use the variables str1 and str2 in your new line of code
-    - Your program should be exactly 5 lines long
+- Write a function that divides element by element 2 lists.
+  - Prototype: def list_division(my_list_1, my_list_2, list_length):
+  - my_list_1 and my_list_2 can contain any type (integer, string, etc.)
+  - list_length can be bigger than the length of both lists
+  - Returns a new list (length = list_length) with all divisions
+  - If 2 elements can’t be divided, the division result should be equal to 0
+  - If an element is not an integer or float:
+    - print: wrong type
+  - If the division can’t be done (/0):
+    - print: division by 0
+  - If my_list_1 or my_list_2 is too short
+    - print: out of range
+  - You have to use try: / except: / finally:
+  - You are not allowed to import any module
 
-- **[5. Copy - Cut - Paste](./7-edges.py)**
+- **[5. Raise exception](./5-raise_exception.py)**
 
-  - Complete this source code
-    - You can find the source code here
-    - You are not allowed to use any loops or conditional statements
-    - Your program should be exactly 8 lines long
-    - word_first_3 should contain the first 3 letters of the variable word
-    - word_last_2 should contain the last 2 letters of the variable word
-    - middle_word should contain the value of the variable word without the first and last letters
+- Write a function that raises a type exception.
+  - Prototype: def raise_exception():
+  - You are not allowed to import any module
    
-- **[6. Create a new sentence](./8-concat_edges.py)**
+- **[6. Raise a message](./6-raise_exception_msg.py)**
 
-  - Complete this source code to print object-oriented programming with Python, followed by a new line.
-    - You can find the source code here
-    - You are not allowed to use any loops or conditional statements
-    - Your program should be exactly 5 lines long
-    - You are not allowed to create new variables
-    - You are not allowed to use string literals
-   
-- **[7. Easter Egg](./9-eater_egg.py)**
-
-  - Write a Python script that prints “The Zen of Python”, by TimPeters, followed by a new line.
-    - Your script should be maximum 98 characters long (please check with wc -m 9-easter_egg.py)
+- Write a function that raises a name exception with a message.
+  - Prototype: def raise_exception_msg(message=""):
+  - You are not allowed to import any module

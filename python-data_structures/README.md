@@ -1,71 +1,116 @@
-# Python - Hello, World
+# Python - Data Structures
 
-- **[0. Hello, print](./2-print.py)**
+- **[0. Print a list of integers](./0-print_list_integer.py)**
 
-  - Write a Python script that prints exactly "Programming is like building a multilingual puzzle, followed by a new line.
-    - Use the function print
+- Write a function that prints all integers of a list.
+  - Prototype: def print_list_integer(my_list=[]):
+  - Format: one integer per line. See example
+  - You are not allowed to import any module
+  - You can assume that the list only contains integers
+  - You are not allowed to cast integers into strings
 
-- **[1. Print integer](./3-print_number.py)**
+- **[1. Secure access to an element in a list](./1-element_at.py)**
 
-  - Complete this source code in order to print the integer stored in the variable number, followed by Battery street, followed by a new line.
-    - You can find the source code here
-    - The output of the script should be:
-      - the number, followed by Battery street,
-      - followed by a new line
-    - You are not allowed to cast the variable number into a string
-    - Your code must be 3 lines long
-    - You have to use f-strings tips
+- Write a function that retrieves an element from a list.
+  - Prototype: def element_at(my_list, idx):
+  - If idx is negative, the function should return None
+  - If idx is out of range (> of number of element in my_list), the function should return None
+  - You are not allowed to import any module
+  - You are not allowed to use try/except
 
-- **[2. Print float](./4-print_float.py)** 
+- **[2. Replace element](./2-replace_in_list.py)** 
 
-  - Complete the source code in order to print the float stored in the variable number with a precision of 2 digits.
-      - You can find the source code here
-      - The output of the program should be:
-          - Float:, followed by the float with only 2 digits
-          - followed by a new line
-      - You are not allowed to cast number to string
-      - You have to use f-strings
+- Write a function that replaces an element of a list at a specific position.
+  - Prototype: def replace_in_list(my_list, idx, element):
+  - If idx is negative, the function should not modify anything, and returns the original list
+  - If idx is out of range (> of number of element in my_list), the function should not modify anything, and returns the original list
+  - You are not allowed to import any module
+  - You are not allowed to use try/except
 
-- **[3. Print string](./5-print_string.py)**
+- **[3. Print a list of integers... in reverse!](./3-print_reversed_list_integer.py)**
 
-  - Complete this source code in order to print 3 times a string stored in the variable str, followed by its first 9 characters.
+- Write a function that prints all integers of a list, in reverse order.
+  - Prototype: def print_reversed_list_integer(my_list=[]):
+  - Format: one integer per line. See example
+  - You are not allowed to import any module
+  - You can assume that the list only contains integers
+  - You are not allowed to cast integers into strings
+  - You have to use str.format() to print integers
+
+- **[4. Replace in a copy](./4-new_in_list.py)**
+
+- Write a function that replaces an element in a list at a specific position without modifying the original list.
+  - Prototype: def new_in_list(my_list, idx, element):
+  - If idx is negative, the function should return a copy of the original list
+  - If idx is out of range (> of number of element in my_list), the function should return a copy of the original list
+  - You are not allowed to import any module
+  - You are not allowed to use try/except
+
+- **[5. Can you C me now?](./5-no_c.py)**
+
+- Write a function that removes all characters c and C from a string.
+  - Prototype: def no_c(my_string):
+  - The function should return the new string
+  - You are not allowed to import any module
+  - You are not allowed to use str.replace()
+   
+- **[6. Lists of lists = Matrix](./6-print_matrix_integer.py)**
+
+- Write a function that prints a matrix of integers.
+  - Prototype: def print_matrix_integer(matrix=[[]]):
+  - Format: see example
+  - You are not allowed to import any module
+  - You can assume that the list only contains integers
+  - You are not allowed to cast integers into strings
+  - You have to use str.format() to print integers
+   
+- **[7. Tuples addition](./7-add_tuple.py)**
+
+- Write a function that adds 2 tuples.
+  - Prototype: def add_tuple(tuple_a=(), tuple_b=()):
+  - Returns a tuple with 2 integers:
+    - The first element should be the addition of the first element of each argument
+    - The second element should be the addition of the second element of each argument
+  - You are not allowed to import any module
+  - You can assume that the two tuples will only contain integers
+  - If a tuple is smaller than 2, use the value 0 for each missing integer
+  - If a tuple is bigger than 2, use only the first 2 integers
+
+- **[8. More returns!](./8-multiple_returns.py)**
+
+- Write a function that returns a tuple with the length of a string and its first character.
+  - Prototype: def multiple_returns(sentence):
+  - If the sentence is empty, the first character should be equal to None
+  - You are not allowed to import any module
+
+  - **[9. Find the max](./9-max_integer.py)**
+
+- Write a function that finds the biggest integer of a list.
+  - Prototype: def max_integer(my_list=[]):
+  - If the list is empty, return None
+  - You can assume that the list only contains integers
+  - You are not allowed to import any module
+  - You are not allowed to use the builtin max()
+
+  - **[10. Only by 2](./10-divisible_by_2.py)**
+
+- Write a function that finds all multiples of 2 in a list.
+  - Prototype: def divisible_by_2(my_list=[]):
+  - Return a new list with True or False, depending on whether the integer at the same position in the original list is a multiple of 2
+  - The new list should have the same size as the original list
+  - You are not allowed to import any module
+
+  - **[11. Delete at](./11-delete_at.py)**
+
+- Write a function that deletes the item at a specific position in a list.
+  - Prototype: def delete_at(my_list=[], idx=0):
+  - If idx is negative or out of range, nothing change (returns the same list)
+  - You are not allowed to use pop()
+  - You are not allowed to import any module
+
+  - **[12. Switch](./12-switch.py)**
+
+- Complete the source code in order to switch value of a and b
   - You can find the source code here
-  - The output of the program should be:
-    - 3 times the value of str
-    - followed by a new line
-    - followed by the 9 first characters of str
-    - followed by a new line
-  - You are not allowed to use any loops or conditional statement
-  - Your program should be maximum 5 lines long
-
-- **[4. Play with strings](./6-concat.py)**
-
-  - Complete this source code to print Welcome to Holberton School!
-    - You can find the source code here
-    - You are not allowed to use any loops or conditional statements.
-    - You have to use the variables str1 and str2 in your new line of code
-    - Your program should be exactly 5 lines long
-
-- **[5. Copy - Cut - Paste](./7-edges.py)**
-
-  - Complete this source code
-    - You can find the source code here
-    - You are not allowed to use any loops or conditional statements
-    - Your program should be exactly 8 lines long
-    - word_first_3 should contain the first 3 letters of the variable word
-    - word_last_2 should contain the last 2 letters of the variable word
-    - middle_word should contain the value of the variable word without the first and last letters
-   
-- **[6. Create a new sentence](./8-concat_edges.py)**
-
-  - Complete this source code to print object-oriented programming with Python, followed by a new line.
-    - You can find the source code here
-    - You are not allowed to use any loops or conditional statements
-    - Your program should be exactly 5 lines long
-    - You are not allowed to create new variables
-    - You are not allowed to use string literals
-   
-- **[7. Easter Egg](./9-eater_egg.py)**
-
-  - Write a Python script that prints “The Zen of Python”, by TimPeters, followed by a new line.
-    - Your script should be maximum 98 characters long (please check with wc -m 9-easter_egg.py)
+  - Your code should be inserted where the comment is (line 4)
+  - Your program should be exactly 5 lines long
