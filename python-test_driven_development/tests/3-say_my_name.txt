@@ -1,71 +1,149 @@
-The `3-say_my_name` module
-==========================
+The ``3-say_my_name`` module
+============================
 
+Using ``say_my_name``
+---------------------
+
+Importing the function:
 >>> say_my_name = __import__('3-say_my_name').say_my_name
 
-Basic usage
-===========
+1. Standard Usage (Happy path)
+==============================
+Normal names:
+>>> say_my_name("Walter", "White")
+My name is Walter White
 
->>> say_my_name("Jean", "Dujardin")
-My name is Jean Dujardin
+>>> say_my_name("Jesse", "Pinkman")
+My name is Jesse Pinkman
 
->>> say_my_name("Breaking", "Bad")
-My name is Breaking Bad
+Names with spaces (valid strings):
+>>> say_my_name("Jean Claude", "Van Damme")
+My name is Jean Claude Van Damme
 
-Default last_name
-=================
+2. Usage with Default Argument
+==============================
+Only first name provided:
+>>> say_my_name("Heisenberg")
+My name is Heisenberg 
 
->>> say_my_name("Antho")
-My name is Antho 
+>>> say_my_name("Tuco")
+My name is Tuco 
 
-Invalid first_name
-==================
+3. Edge Cases: Empty or Weird Strings
+=====================================
+Note: Empty strings are still strings, so no error should be raised, just weird spacing in output.
 
->>> say_my_name(8, "White")
+Both empty:
+>>> say_my_name("", "")
+My name is  
+
+First name empty:
+>>> say_my_name("", "Schrader")
+My name is  Schrader
+
+Last name empty (explicitly passed):
+>>> say_my_name("Hank", "")
+My name is Hank 
+
+Strings with only spaces:
+>>> say_my_name("   ", "   ")
+My name is        
+
+4. TypeError: First Name Invalid
+================================
+Integers:
+>>> say_my_name(12, "White")
 Traceback (most recent call last):
   ...
 TypeError: first_name must be a string
 
-Tests
-=============
-
->>> say_my_name("Antoine", "Bats")
-My name is Antoine Bats
-
->>> say_my_name("Antho Ny", "Di Do")
-My name is Antho Ny Di Do
-
->>> say_my_name("Antoine")
-My name is Antoine 
-
-More invalid cases
-==================
-
->>> say_my_name(8, "John")
+Floats:
+>>> say_my_name(12.5, "White")
 Traceback (most recent call last):
   ...
 TypeError: first_name must be a string
 
->>> say_my_name("Antho", ["Tho", "An", "Di"])
+Lists:
+>>> say_my_name(["Walter"], "White")
+Traceback (most recent call last):
+  ...
+TypeError: first_name must be a string
+
+None:
+>>> say_my_name(None, "White")
+Traceback (most recent call last):
+  ...
+TypeError: first_name must be a string
+
+Dictionaries:
+>>> say_my_name({"first": "Walter"}, "White")
+Traceback (most recent call last):
+  ...
+TypeError: first_name must be a string
+
+Booleans:
+>>> say_my_name(True, "White")
+Traceback (most recent call last):
+  ...
+TypeError: first_name must be a string
+
+5. TypeError: Last Name Invalid
+===============================
+Integers:
+>>> say_my_name("Walter", 12)
 Traceback (most recent call last):
   ...
 TypeError: last_name must be a string
 
->>> say_my_name({"Antho": 8, "Di": 76}, 7.6)
+Floats:
+>>> say_my_name("Walter", 12.5)
+Traceback (most recent call last):
+  ...
+TypeError: last_name must be a string
+
+Lists:
+>>> say_my_name("Walter", ["White"])
+Traceback (most recent call last):
+  ...
+TypeError: last_name must be a string
+
+None:
+>>> say_my_name("Walter", None)
+Traceback (most recent call last):
+  ...
+TypeError: last_name must be a string
+
+Dictionaries:
+>>> say_my_name("Walter", {"last": "White"})
+Traceback (most recent call last):
+  ...
+TypeError: last_name must be a string
+
+Booleans:
+>>> say_my_name("Walter", False)
+Traceback (most recent call last):
+  ...
+TypeError: last_name must be a string
+
+6. Both Arguments Invalid
+=========================
+Ideally, it should raise the error for the first argument first.
+
+>>> say_my_name(12, 12)
 Traceback (most recent call last):
   ...
 TypeError: first_name must be a string
 
->>> say_my_name(None)
+7. Argument Count Errors
+========================
+Missing all arguments:
+>>> say_my_name()
 Traceback (most recent call last):
   ...
-TypeError: first_name must be a string
+TypeError: say_my_name() missing 1 required positional argument: 'first_name'
 
-Edge cases
-==========
-
->>> say_my_name("", "Dido")
-My name is  Dido
-
->>> say_my_name("A", "")
-My name is A 
+Too many arguments (more than 2):
+>>> say_my_name("Walter", "White", "Junior")
+Traceback (most recent call last):
+  ...
+TypeError: say_my_name() takes from 1 to 2 positional arguments but 3 were given
