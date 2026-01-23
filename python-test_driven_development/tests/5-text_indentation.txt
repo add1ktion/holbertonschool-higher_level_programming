@@ -3,39 +3,50 @@ The `text_indentation` module
 
 >>> text_indentation = __import__('5-text_indentation').text_indentation
 
->>> text_indentation("""Lorem ipsum dolor sit amet, consectetur adipiscing elit. \
-Quonam modo? Utrum igitur tibi litteram videor an totas paginas commovere? \
-Non autem hoc: igitur ne illud quidem. Fortasse id optimum, sed ubi illud: \
-Plus semper voluptatis? Teneo, inquit, finem illi videri nihil dolere. \
-Transfer idem ad modestiam vel temperantiam, quae est moderatio cupiditatum \
-rationi oboediens. Si id dicis, vicimus. Inde sermone vario sex illa a Dipylo \
-stadia confecimus. Sin aliud quid voles, postea. Quae animi affectio suum \
-cuique tribuens atque hanc, quam dico. Utinam quidem dicerent alium alio \
-beatiorem! Iam ruinas videres""")
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+1. Cas standard
+===============
+>>> text_indentation("Holberton. School? : Python")
+Holberton.
 <BLANKLINE>
-Quonam modo?
+School?
 <BLANKLINE>
-Utrum igitur tibi litteram videor an totas paginas commovere?
+:
 <BLANKLINE>
-Non autem hoc:
+Python
+
+2. Gestion des espaces (Trim)
+=============================
+Il ne doit pas y avoir d'espaces au début des lignes après le saut :
+>>> text_indentation("Sentence 1?     Sentence 2.     Sentence 3")
+Sentence 1?
 <BLANKLINE>
-igitur ne illud quidem.
+Sentence 2.
 <BLANKLINE>
-Fortasse id optimum, sed ubi illud:
+Sentence 3
+
+3. Chaîne vide ou uniquement espaces
+====================================
+>>> text_indentation("")
+>>> text_indentation("       ")
+
+4. Erreurs de Type
+==================
+>>> text_indentation(123)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+
+>>> text_indentation(None)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+
+5. Caractères collés sans espaces
+=================================
+>>> text_indentation("Test.Test?Test:")
+Test.
 <BLANKLINE>
-Plus semper voluptatis?
+Test?
 <BLANKLINE>
-Teneo, inquit, finem illi videri nihil dolere.
+Test:
 <BLANKLINE>
-Transfer idem ad modestiam vel temperantiam, quae est moderatio cupiditatum rationi oboediens.
-<BLANKLINE>
-Si id dicis, vicimus.
-<BLANKLINE>
-Inde sermone vario sex illa a Dipylo stadia confecimus.
-<BLANKLINE>
-Sin aliud quid voles, postea.
-<BLANKLINE>
-Quae animi affectio suum cuique tribuens atque hanc, quam dico.
-<BLANKLINE>
-Utinam quidem dicerent alium alio beatiorem! Iam ruinas videres

@@ -15,16 +15,18 @@ def text_indentation(text):
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
+    text = text.strip()
+    if len(text) == 0:
+        return
+
     i = 0
     while i < len(text):
-        c = text[i]
-        if c in '.?:':
-            print(c, end="")
-            print()
-            print()
+        print(text[i], end="")
+        if text[i] in ".?:":
+            print("\n")
             i += 1
-            while i < len(text) and text[i].isspace():
+            # Saute les espaces qui suivent le caractère spécial
+            while i < len(text) and text[i] == " ":
                 i += 1
-        else:
-            print(c, end="")
-            i += 1
+            continue
+        i += 1
