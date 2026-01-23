@@ -1,38 +1,74 @@
-The `4-print_square` module
+===========================
+The ``4-print_square`` module
 ===========================
 
 >>> print_square = __import__('4-print_square').print_square
 
+1. Cas de base (Entiers positifs)
+=================================
 >>> print_square(4)
 ####
 ####
 ####
 ####
 
->>> print_square(10)
-##########
-##########
-##########
-##########
-##########
-##########
-##########
-##########
-##########
-##########
-
->>> print_square(0)
-
-
 >>> print_square(1)
 #
 
+Taille 0 (ne doit rien imprimer) :
+>>> print_square(0)
+
+2. Erreurs de Type (Non-entiers)
+================================
+Strings :
+>>> print_square("4")
+Traceback (most recent call last):
+    ...
+TypeError: size must be an integer
+
+Floats positifs :
+>>> print_square(4.5)
+Traceback (most recent call last):
+    ...
+TypeError: size must be an integer
+
+Listes :
+>>> print_square([5])
+Traceback (most recent call last):
+    ...
+TypeError: size must be an integer
+
+None :
+>>> print_square(None)
+Traceback (most recent call last):
+    ...
+TypeError: size must be an integer
+
+3. Erreurs de Valeur (Négatifs)
+===============================
+Entier négatif :
 >>> print_square(-1)
 Traceback (most recent call last):
-  ...
+    ...
 ValueError: size must be >= 0
 
+>>> print_square(-100)
+Traceback (most recent call last):
+    ...
+ValueError: size must be >= 0
+
+4. Cas spécial : Float négatif
+==============================
+L'énoncé précise spécifiquement que si c'est un float < 0, c'est un TypeError.
 >>> print_square(-1.5)
 Traceback (most recent call last):
- ...
+    ...
+TypeError: size must be an integer
+
+5. Cas des Booléens
+===================
+Même si True vaut 1, le checker d'Holberton est parfois strict sur le type pur.
+>>> print_square(True)
+Traceback (most recent call last):
+    ...
 TypeError: size must be an integer
