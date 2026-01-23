@@ -1,7 +1,23 @@
+=============================
 The `2-matrix_divided` module
 =============================
 
+Import module :
+===============
 >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Operations :
+============
+
+matrix must be a list of lists of integers or floats, otherwise raise a TypeError
+exception with the message matrix must be a matrix (list of lists) of integers/floats.
+Each row of the matrix must be of the same size, otherwise raise a TypeError exception
+with the message Each row of the matrix must have the same size.
+div must be a number (integer or float), otherwise raise
+a TypeError exception with the message div must be a number.
+
+Tests :
+=======
 
 >>> matrix = [
 ...     [1, 2, 3],
@@ -13,3 +29,15 @@ The `2-matrix_divided` module
 
 >>> matrix
 [[1, 2, 3], [4, 5, 6]]
+
+>>> print(matrix_divided(matrix, "not a number"))
+Traceback (most recent call last):
+TypeError: div must be a number
+
+>>> print(matrix_divided(matrix, None))
+Traceback (most recent call last):
+TypeError: div must be a number
+
+>>> print(matrix_divided(matrix, 0))
+Traceback (most recent call last):
+ZeroDivisionError: division by zero
