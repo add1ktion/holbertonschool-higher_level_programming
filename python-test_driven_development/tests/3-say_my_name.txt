@@ -3,13 +3,69 @@ The `3-say_my_name` module
 
 >>> say_my_name = __import__('3-say_my_name').say_my_name
 
->>> say_my_name("John", "Smith")
-My name is John Smith
+Basic usage
+===========
 
->>> say_my_name("Bob")
-My name is Bob 
+>>> say_my_name("Jean", "Dujardin")
+My name is Jean Dujardin
 
->>> say_my_name(12, "White")
+>>> say_my_name("Breaking", "Bad")
+My name is Breaking Bad
+
+Default last_name
+=================
+
+>>> say_my_name("Antho")
+My name is Antho 
+
+Invalid first_name
+==================
+
+>>> say_my_name(8, "White")
 Traceback (most recent call last):
   ...
 TypeError: first_name must be a string
+
+Brennan tests
+=============
+
+>>> say_my_name("Antoine", "Bats")
+My name is Antoine Bats
+
+>>> say_my_name("Antho Ny", "Di Do")
+My name is Antho Ny Di Do
+
+>>> say_my_name("Antoine")
+My name is Antoine 
+
+More invalid cases
+==================
+
+>>> say_my_name(8, "John")
+Traceback (most recent call last):
+  ...
+TypeError: first_name must be a string
+
+>>> say_my_name("Antho", ["Tho", "An", "Di"])
+Traceback (most recent call last):
+  ...
+TypeError: last_name must be a string
+
+>>> say_my_name({"Antho": 8, "Di": 76}, 7.6)
+Traceback (most recent call last):
+  ...
+TypeError: first_name must be a string
+
+>>> say_my_name(None)
+Traceback (most recent call last):
+  ...
+TypeError: first_name must be a string
+
+Edge cases
+==========
+
+>>> say_my_name("", "Dido")
+My name is  Dido
+
+>>> say_my_name("A", "")
+My name is A 
