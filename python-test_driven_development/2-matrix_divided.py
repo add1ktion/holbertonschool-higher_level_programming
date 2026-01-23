@@ -11,6 +11,7 @@ Prototype: def matrix_divided(matrix, div):
 You are not allowed to import any module
 """
 
+
 def matrix_divided(matrix, div):
     """
     Divides all elements of a matrix.
@@ -31,9 +32,8 @@ def matrix_divided(matrix, div):
     if div == 0:
         raise ZeroDivisionError("division by zero")
 
-    if (not isinstance(matrix, list) or 
-        len(matrix) == 0 or 
-        not all(isinstance(row, list) and len(row) > 0 for row in matrix)):
+    if (not isinstance(matrix, list) or len(matrix) == 0 or
+       not all(isinstance(row, list) and len(row) > 0 for row in matrix)):
         raise TypeError(msg1)
 
     first_len = len(matrix[0])
@@ -46,4 +46,3 @@ def matrix_divided(matrix, div):
 
     new_matrix = [[round(el / div, 2) for el in row] for row in matrix]
     return new_matrix
-
