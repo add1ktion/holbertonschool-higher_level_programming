@@ -72,3 +72,10 @@ Même si True vaut 1, le checker d'Holberton est parfois strict sur le type pur.
 Traceback (most recent call last):
     ...
 TypeError: size must be an integer
+
+6. Manque d'argument
+====================
+>>> print_square()
+Traceback (most recent call last):
+    ...
+TypeError: print_square() missing 1 required positional argument: 'size'
