@@ -107,3 +107,33 @@ Division par un nombre infini (float('inf')) :
 Matrice avec des nombres NaN (Not a Number) :
 >>> matrix_divided([[float('nan'), 2], [3, 4]], 2)
 [[nan, 1.0], [1.5, 2.0]]
+
+7. Tests de priorité des erreurs
+================================
+Si la matrice est nulle ET div est une string, l'erreur de matrice prime :
+>>> matrix_divided(None, "pas un nombre")
+Traceback (most recent call last):
+    ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+8. Nombres négatifs pour div
+============================
+>>> matrix_divided([[10, -20], [30, 40]], -5)
+[[-2.0, 4.0], [-6.0, -8.0]]
+
+9. Éléments de types mixtes (Int et Float)
+==========================================
+>>> matrix_divided([[1, 2.2], [3, 4.4]], 2)
+[[0.5, 1.1], [1.5, 2.2]]
+
+10. Autres types invalides pour div
+===================================
+>>> matrix_divided([[1, 2], [3, 4]], [2])
+Traceback (most recent call last):
+    ...
+TypeError: div must be a number
+
+>>> matrix_divided([[1, 2], [3, 4]], {1})
+Traceback (most recent call last):
+    ...
+TypeError: div must be a number
