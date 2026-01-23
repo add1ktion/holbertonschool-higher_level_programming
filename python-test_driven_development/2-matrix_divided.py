@@ -34,7 +34,7 @@ def matrix_divided(matrix, div):
 
     if not isinstance(matrix, list) or len(matrix) == 0:
         raise TypeError(msg_type)
-    
+
     if not all(isinstance(row, list) for row in matrix):
         raise TypeError(msg_type)
 
@@ -44,7 +44,7 @@ def matrix_divided(matrix, div):
         raise ZeroDivisionError(msg_div_zero)
 
     row_size = len(matrix[0])
-    
+
     for row in matrix:
         if len(row) == 0:
             raise TypeError(msg_type)
