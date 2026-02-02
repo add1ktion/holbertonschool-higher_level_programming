@@ -1,26 +1,22 @@
 #!/usr/bin/python3
-Rectangle = __import__('7-rectangle').Rectangle
+BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
-my_rectangle_1 = Rectangle(8, 4)
-print(my_rectangle_1)
-print("--")
-my_rectangle_1.print_symbol = "&"
-print(my_rectangle_1)
-print("--")
+bg = BaseGeometry()
 
-my_rectangle_2 = Rectangle(2, 1)
-print(my_rectangle_2)
-print("--")
-Rectangle.print_symbol = "C"
-print(my_rectangle_2)
-print("--")
+bg.integer_validator("my_int", 12)
+bg.integer_validator("width", 89)
 
-my_rectangle_3 = Rectangle(7, 3)
-print(my_rectangle_3)
+try:
+    bg.integer_validator("name", "John")
+except Exception as e:
+    print("[{}] {}".format(e.__class__.__name__, e))
 
-print("--")
+try:
+    bg.integer_validator("age", 0)
+except Exception as e:
+    print("[{}] {}".format(e.__class__.__name__, e))
 
-my_rectangle_3.print_symbol = ["C", "is", "fun!"]
-print(my_rectangle_3)
-
-print("--")
+try:
+    bg.integer_validator("distance", -4)
+except Exception as e:
+    print("[{}] {}".format(e.__class__.__name__, e))

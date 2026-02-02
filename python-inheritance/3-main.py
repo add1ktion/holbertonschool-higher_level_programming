@@ -1,15 +1,10 @@
 #!/usr/bin/python3
-Rectangle = __import__('3-rectangle').Rectangle
+is_kind_of_class = __import__('3-is_kind_of_class').is_kind_of_class
 
-my_rectangle = Rectangle(2, 4)
-print("Area: {} - Perimeter: {}".format(my_rectangle.area(), my_rectangle.perimeter()))
-
-print(str(my_rectangle))
-print(repr(my_rectangle))
-
-print("--")
-
-my_rectangle.width = 10
-my_rectangle.height = 3
-print(my_rectangle)
-print(repr(my_rectangle))
+a = 1
+if is_kind_of_class(a, int):
+    print("{} comes from {}".format(a, int.__name__))
+if is_kind_of_class(a, float):
+    print("{} comes from {}".format(a, float.__name__))
+if is_kind_of_class(a, object):
+    print("{} comes from {}".format(a, object.__name__))

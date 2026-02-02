@@ -1,26 +1,10 @@
 #!/usr/bin/python3
-Rectangle = __import__('4-rectangle').Rectangle
+inherits_from = __import__('4-inherits_from').inherits_from
 
-my_rectangle = Rectangle(2, 4)
-print(str(my_rectangle))
-print("--")
-print(my_rectangle)
-print("--")
-print(repr(my_rectangle))
-print("--")
-print(hex(id(my_rectangle)))
-print("--")
-
-# create new instance based on representation
-new_rectangle = eval(repr(my_rectangle))
-print(str(new_rectangle))
-print("--")
-print(new_rectangle)
-print("--")
-print(repr(new_rectangle))
-print("--")
-print(hex(id(new_rectangle)))
-print("--")
-
-print(new_rectangle is my_rectangle)
-print(type(new_rectangle) is type(my_rectangle))
+a = True
+if inherits_from(a, int):
+    print("{} inherited from class {}".format(a, int.__name__))
+if inherits_from(a, bool):
+    print("{} inherited from class {}".format(a, bool.__name__))
+if inherits_from(a, object):
+    print("{} inherited from class {}".format(a, object.__name__))

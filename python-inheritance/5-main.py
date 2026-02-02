@@ -1,12 +1,8 @@
 #!/usr/bin/python3
-Rectangle = __import__('5-rectangle').Rectangle
+BaseGeometry = __import__('5-base_geometry').BaseGeometry
 
-my_rectangle = Rectangle(2, 4)
-print("Area: {} - Perimeter: {}".format(my_rectangle.area(), my_rectangle.perimeter()))
+bg = BaseGeometry()
 
-del my_rectangle
-
-try:
-    print(my_rectangle)
-except Exception as e:
-    print("[{}] {}".format(e.__class__.__name__, e))
+print(bg)
+print(dir(bg))
+print(dir(BaseGeometry))

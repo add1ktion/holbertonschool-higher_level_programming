@@ -1,6 +1,14 @@
 #!/usr/bin/python3
-Rectangle = __import__('0-rectangle').Rectangle
+lookup = __import__('0-lookup').lookup
 
-my_rectangle = Rectangle()
-print(type(my_rectangle))
-print(my_rectangle.__dict__)
+class MyClass1(object):
+    pass
+
+class MyClass2(object):
+    my_attr1 = 3
+    def my_meth(self):
+        pass
+
+print(lookup(MyClass1))
+print(lookup(MyClass2))
+print(lookup(int))
