@@ -1,12 +1,10 @@
 #!/usr/bin/python3
 """CountedIterator module."""
 
-
 class CountedIterator:
     """Iterator that tracks iteration count."""
 
     def __init__(self, iterable):
-        """Initialize iterator and counter."""
         self.iterator = iter(iterable)
         self.count = 0
 
@@ -17,7 +15,6 @@ class CountedIterator:
             self.count += 1
             return item
         except StopIteration:
-            self.count += 1
             raise
 
     def get_count(self):
