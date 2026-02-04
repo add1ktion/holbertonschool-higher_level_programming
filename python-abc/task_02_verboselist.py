@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """VerboseList module."""
 
+
 class VerboseList(list):
     """List subclass with operation notifications."""
 
