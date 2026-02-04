@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Geometric shapes module."""
-import math
 from abc import ABC, abstractmethod
+import math
 
 
 class Shape(ABC):
