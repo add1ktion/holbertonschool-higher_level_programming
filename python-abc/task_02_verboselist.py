@@ -1,27 +1,27 @@
 #!/usr/bin/python3
-"""VerboseList: list with operation notifications"""
+"""VerboseList module."""
 
 
 class VerboseList(list):
-    """List subclass that logs append/extend/remove/pop operations"""
+    """List subclass with operation notifications."""
 
     def append(self, item):
-        """Add item with notification"""
+        """Append item and print notification."""
         super().append(item)
         print("Added [{}] to the list.".format(item))
 
     def extend(self, iterable):
-        """Extend list with notification"""
+        """Extend list and print notification."""
         super().extend(iterable)
         print("Extended the list with [{}] items.".format(len(iterable)))
 
     def remove(self, item):
-        """Remove item with notification"""
+        """Remove item and print notification."""
         print("Removed [{}] from the list.".format(item))
         super().remove(item)
 
     def pop(self, index=-1):
-        """Pop item with notification"""
+        """Pop item and print notification."""
         item = self[index]
         print("Popped [{}] from the list.".format(item))
         super().pop(index)

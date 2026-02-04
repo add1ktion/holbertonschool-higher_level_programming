@@ -1,21 +1,25 @@
 #!/usr/bin/python3
-"""CountedIterator: tracks iterator calls"""
+"""CountedIterator module."""
 
 
 class CountedIterator:
-    """Iterator wrapper with call counter"""
+    """Iterator that tracks iteration count."""
 
     def __init__(self, iterable):
-        """Initialize iterator and counter"""
+        """Initialize iterator and counter."""
         self.iterator = iter(iterable)
         self.count = 0
 
     def __next__(self):
-        """Increment count and yield next item"""
-        self.count += 1
-        next_item = next(self.iterator)
-        return next_item
+        """Get next item and increment count."""
+        try:
+            item = next(self.iterator)
+            self.count += 1
+            return item
+        except StopIteration:
+            self.count += 1
+            raise
 
     def get_count(self):
-        """Return iteration count"""
+        """Return number of items iterated."""
         return self.count
