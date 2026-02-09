@@ -47,69 +47,79 @@
   - You don't need to manage exceptions if the object can't be serialized.
   - You don't need to manage file permission exceptions.
    
-- **[6. Print sorted dictionary](./6-print_sorted_dictionary.py)**
+- **[6. Create object from a JSON file](./6-load_from_json_file.py)**
 
-- Write a function that prints a dictionary by ordered keys.
-  - Prototype: def print_sorted_dictionary(a_dictionary):
-  - You can assume that all keys are strings
-  - Keys should be sorted by alphabetic order
-  - Only sort keys of the first level (don’t sort keys of a dictionary inside the main dictionary)
-  - Dictionary values can have any type
-  - You are not allowed to import any module
+- Write a function that creates an Object from a "JSON file":
+  - Prototype: def load_from_json_file(filename):
+  - You must use the with statement
+  - You don't need to manage exceptions if the JSON string doesn't represent an object.
+  - You don't need to manage file permissions / exceptions.
    
-- **[7. Update dictionary](./7-update_dictionary.py)**
+- **[7. Load, add, save](./7-add_item.py)**
 
-- Write a function that replaces or adds key/value in a dictionary.
-  - Prototype: def update_dictionary(a_dictionary, key, value):
-  - key argument will be always a string
-  - value argument will be any type
-  - If a key exists in the dictionary, the value will be replaced
-  - If a key doesn’t exist in the dictionary, it will be created
+- Write a script that adds all arguments to a Python list, and then save them to a file:
+  - You must use your function save_to_json_file from 5-save_to_json_file.py
+  - You must use your function load_from_json_file from 6-load_from_json_file.py
+  - The list must be saved as a JSON representation in a file named add_item.json
+  - If the file doesn't exist, it should be created
+  - You don't need to manage file permissions / exceptions.
+
+- **[8. Class to JSON](./8-class_to_json.py)**
+
+- Write a function that returns the dictionary description with simple data structure (list, dictionary, string, integer and boolean) for JSON serialization of an object:
+  - Prototype: def class_to_json(obj):
+  - obj is an instance of a Class
+  - All attributes of the obj Class are serializable: list, dictionary, string, integer and boolean
   - You are not allowed to import any module
 
-- **[8. Simple delete by key](./8-simple_delete.py)**
+  - **[9. Student to JSON](./9-student.py)**
 
-- Write a function that deletes a key in a dictionary.
-  - Prototype: def simple_delete(a_dictionary, key=""):
-  - key argument will be always a string
-  - If a key doesn’t exist, the dictionary won’t change
+- Write a class Student that defines a student by:
+  - Public instance attributes:
+  - first_name
+  - last_name
+  - age
+  - Instantiation with first_name, last_name and age: def __init__(self, first_name, last_name, age):
+  - Public method def to_json(self): that retrieves a dictionary representation of a Student instance (same as 8-class_to_json.py)
   - You are not allowed to import any module
 
-  - **[9. Multiply by 2](./9-multiply_by_2.py)**
+  - **[10. Student to JSON with filter](./10-student.py)**
 
-- Write a function that returns a new dictionary with all values multiplied by 2
-  - Prototype: def multiply_by_2(a_dictionary):
-  - You can assume that all values are only integers
-  - Returns a new dictionary
+- Write a class Student that defines a student by: (based on 9-student.py)
+  - Public instance attributes:
+  - first_name
+  - last_name
+  - age
+  - Instantiation with first_name, last_name and age: def __init__(self, first_name, last_name, age):
+  - Public method def to_json(self, attrs=None): that retrieves a dictionary representation of a Student instance (same as  8-class_to_json.py):
+  - If attrs is a list of strings, only attribute names contained in this list must be retrieved.
+  - Otherwise, all attributes must be retrieved
   - You are not allowed to import any module
 
-  - **[10. Best score](./10-best_score.py)**
+  - **[11. Student to disk and reload](./11-student.py)**
 
-- Write a function that returns a key with the biggest integer value.
-  - Prototype: def best_score(a_dictionary):
-  - You can assume that all values are only integers
-  - If no score found, return None
-  - You can assume all students have a different score
+- Write a class Student that defines a student by: (based on 10-student.py)
+  - Public instance attributes:
+  - first_name
+  - last_name
+  - age
+  - Instantiation with first_name, last_name and age: def __init__(self, first_name, last_name, age):
+  - Public method def to_json(self, attrs=None): that retrieves a dictionary representation of a Student instance (same as 8-class_to_json.py):
+  - If attrs is a list of strings, only attributes name contain in this list must be retrieved.
+  - Otherwise, all attributes must be retrieved
+  - Public method def reload_from_json(self, json): that replaces all attributes of the Student instance:
+  - You can assume json will always be a dictionary
+  - A dictionary key will be the public attribute name
+  - A dictionary value will be the value of the public attribute
   - You are not allowed to import any module
+- Now, you have a simple implementation of a serialization and deserialization mechanism (concept of representation of an object to another format, without losing any information and allow us to rebuild an object based on this representation)
 
-  - **[11. Multiply by using map](./11-multiply_list_map.py)**
-
-- Write a function that returns a list with all values multiplied by a number without using any loops.
-  - Prototype: def multiply_list_map(my_list=[], number=0):
-  - Returns a new list:
-    - Same length as my_list
-    - Each value should be multiplied by number
-  - Initial list should not be modified
-  - You are not allowed to import any module
-  - You have to use map
-  - Your file should be max 3 lines
-
-  - **[12. Roman to Integer](./12-roman_to_int.py)**
+  - **[12. Pascal's Triangle](./12-pascal_triangle.py)**
 
 - Technical interview preparation:
   - You are not allowed to google anything
   - Whiteboard first
-- Create a function def roman_to_int(roman_string): that converts a Roman numeral to an integer.
-  - You can assume the number will be between 1 to 3999.
-  - def roman_to_int(roman_string) must return an integer
-  - If the roman_string is not a string or None, return 0
+- Create a function def pascal_triangle(n): that returns a list of lists of integers representing the Pascal's triangle of n:
+  - Returns an empty list if n <= 0
+  - You can assume n will be always an integer
+  - You are not allowed to import any module
