@@ -1,20 +1,10 @@
 #!/usr/bin/env python3
-"""
-Serialize and deserialize dictionaries to/from XML.
-"""
+"""Dict to/from XML serialization."""
 import xml.etree.ElementTree as ET
 
+
 def serialize_to_xml(dictionary, filename):
-    """
-    Serializes a Python dictionary to XML file.
-
-    Args:
-        dictionary (dict): Dictionary to serialize.
-        filename (str): XML filename.
-
-    Returns:
-        bool: True on success, False on error.
-    """
+    """Serialize dict to XML file."""
     try:
         root = ET.Element("data")
 
@@ -32,15 +22,7 @@ def serialize_to_xml(dictionary, filename):
 
 
 def deserialize_from_xml(filename):
-    """
-    Deserializes XML file to Python dictionary.
-
-    Args:
-        filename (str): XML filename.
-
-    Returns:
-        dict: Dictionary from XML, or empty dict on error.
-    """
+    """Deserialize XML to dict."""
     try:
         tree = ET.parse(filename)
         root = tree.getroot()

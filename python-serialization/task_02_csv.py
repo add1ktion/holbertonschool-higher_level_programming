@@ -1,18 +1,11 @@
 #!/usr/bin/env python3
-"""Converts CSV data to JSON format."""
+"""Convert CSV to JSON."""
 import csv
 import json
 
+
 def convert_csv_to_json(csv_filename):
-    """
-    Converts CSV data to JSON format.
-
-    Args:
-        csv_filename (str): CSV filename.
-
-    Returns:
-        bool: True if conversion successful, False otherwise.
-    """
+    """Convert CSV to data.json."""
     try:
         with open(csv_filename, 'r', encoding="utf-8") as csv_file:
             csv_reader = csv.DictReader(csv.file)
