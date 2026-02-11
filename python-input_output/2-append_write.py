@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+Appends a string at the end of a UTF8 text
+file and returns the number of characters added.
+"""
 
 
 def append_write(filename="", text=""):

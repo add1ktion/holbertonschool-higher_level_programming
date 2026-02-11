@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+Returns dict description with simple
+data structure for JSON serialization.
+"""
 import json
 
 

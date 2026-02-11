@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Writes an Object to a text file using JSON representation."""
 import json
 
 
