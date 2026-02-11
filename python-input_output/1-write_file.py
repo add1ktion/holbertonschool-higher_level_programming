@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+Writes a string to a UTF8 text file and
+returns the number of characters written.
+"""
 
 
 def write_file(filename="", text=""):
