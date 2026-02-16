@@ -16,6 +16,7 @@ def fetch_and_print_posts():
         for post in data:
             print(post['title'])
 
+
 def fetch_and_save_posts():
     r = requests.get("https://jsonplaceholder.typicode.com/posts")
 
@@ -23,7 +24,8 @@ def fetch_and_save_posts():
         data = r.json()
 
         for post in data:
-            post_list = [{'id': post[id], 'title': post[title], 'body': post[body]}]
+            post_list = [{'id': post[id], 'title': post[title],
+                         'body': post[body]}]
 
         with open('posts.csv', 'w', newline='') as f:
             writer = csv.DictWriter(f, fieldnames=['id', 'title', 'body'])
