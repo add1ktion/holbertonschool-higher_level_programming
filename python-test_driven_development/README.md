@@ -1,6 +1,6 @@
 # Python - Test-driven development
 
-- **[0. Integers addition](./0-add_integer.py,)**
+- **[0. Integers addition](./0-add_integer.py)**
 
 - Write a function that adds 2 integers.
   - Prototype: def add_integer(a, b=98):
