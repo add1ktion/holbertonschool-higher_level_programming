@@ -45,11 +45,12 @@ class Handler (http.server.BaseHTTPRequestHandler):
             self.send_response(404)
             self.send_header("Content-type", "text/plain")
             self.end_headers()
-            self.wfile.write(b"Not Found\n")
+            self.wfile.write(b"Endpoint not found\n")
 
 
 if __name__ == "__main__":
     """Start the HTTP server."""
+    socketserver.TCPServer.allow_reuse_address = True
     with socketserver.TCPServer(("", PORT), Handler) as httpd:
         print(f"Serveur démarré: http://localhost:{PORT}")
-        httpd.server_forever()
+        httpd.serve_forever()
