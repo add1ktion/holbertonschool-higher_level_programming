@@ -51,6 +51,6 @@ if __name__ == "__main__":
     """Start the HTTP server."""
     PORT = 8000
     server_address = ('', PORT)
-    httpd = http.server.HTTPServer(server_address, SimpleHTTPRequestHandler)
+    httpd = http.server.HTTPServer(server_address, Handler)
     print(f"Serving on port {PORT}...")
     httpd.serve_forever()
