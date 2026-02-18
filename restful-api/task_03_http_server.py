@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """Simple HTTP API: /, /data (JSON), /status (OK), 404 else."""
 import http.server
-import socketserver
 import json
 
 PORT = 8000
@@ -50,7 +49,7 @@ class Handler (http.server.BaseHTTPRequestHandler):
 
 if __name__ == "__main__":
     """Start the HTTP server."""
-    socketserver.TCPServer.allow_reuse_address = True
-    with socketserver.TCPServer(("", PORT), Handler) as httpd:
-        print(f"Serveur démarré: http://localhost:{PORT}")
-        httpd.serve_forever()
+    server_address = ('', 8000)
+    httpd = http.server.HTTPServer(server_address, SimpleHTTPRequestHandler)
+    print("Server running on port 8000...")
+    httpd.serve_forever()
