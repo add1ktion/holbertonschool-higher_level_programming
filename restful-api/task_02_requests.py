@@ -22,10 +22,11 @@ def fetch_and_save_posts():
 
     if r.status_code == 200:
         data = r.json()
-
-        for post in data:
-            post_list = [{'id': post[id], 'title': post[title],
-                         'body': post[body]}]
+        post_list = [{
+            'id': post['id'],
+            'title': post['title'],
+            'body': post['body']}
+            for post in data]
 
         with open('posts.csv', 'w', newline='') as f:
             writer = csv.DictWriter(f, fieldnames=['id', 'title', 'body'])
