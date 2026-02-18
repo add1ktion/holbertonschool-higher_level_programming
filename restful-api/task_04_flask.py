@@ -9,47 +9,48 @@ users = {}
 @app.route("/")
 def home():
     """Serve the API welcome message."""
-    return "Welcome to the Flask API!\n"
+    return "Welcome to the Flask API!"
 
 
 @app.route("/data")
 def data():
     """Return a JSON list of all usernames."""
-    usernames = list(users.keys())
-    return jsonify(usernames)
+    return jsonify(list(users.keys()))
 
 
 @app.route("/status")
 def status():
     """Return API status."""
-    return "OK\n"
+    return "OK"
 
 
 @app.route("/users/<username>")
 def show_user_profile(username):
     """Get user by username or 404."""
-    if username in users:
-        return jsonify(users[username])
+    user = users.get(username)
+    if user:
+        return jsonify(user)
     return jsonify({"error": "User not found"}), 404
 
 
 @app.route("/add_user", methods=["POST"])
 def add_user():
     """POST new user or error 400/409."""
-    try:
-        user_data = request.get_json()
-    except Exception:
+    user_data = request.get_json(silent=True)
+
+    if user_data is None:
         return jsonify({"error": "Invalid JSON"}), 400
 
-    if 'username' not in user_data:
-        return jsonify({"error": "Username is required"}), 400
+    username = user_data.get("username")
 
-    username = user_data['username']
+    if not username:
+        return jsonify({"error": "Username is required"}), 400
 
     if username in users:
         return jsonify({"error": "Username already exists"}), 409
 
     users[username] = user_data
+
     return jsonify({
         "message": "User added",
         "user": user_data
@@ -57,4 +58,4 @@ def add_user():
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host="0.0.0.0", port=5000)
