@@ -22,7 +22,7 @@ class Handler (http.server.BaseHTTPRequestHandler):
             self.send_response(200)
             self.send_header("Content-type", "application/json")
             self.end_headers()
-            self.wfile.write(json.dumps(data).encode())
+            self.wfile.write(json.dumps(data).encode('utf-8'))
 
         elif self.path == '/status':
             self.send_response(200)
@@ -38,7 +38,7 @@ class Handler (http.server.BaseHTTPRequestHandler):
             self.send_response(200)
             self.send_header("Content-type", "application/json")
             self.end_headers()
-            self.wfile.write(json.dumps(info).encode())
+            self.wfile.write(json.dumps(info).encode('utf-8'))
 
         else:
             self.send_response(404)
@@ -49,7 +49,8 @@ class Handler (http.server.BaseHTTPRequestHandler):
 
 if __name__ == "__main__":
     """Start the HTTP server."""
-    server_address = ('', 8000)
+    PORT = 8000
+    server_address = ('', PORT)
     httpd = http.server.HTTPServer(server_address, SimpleHTTPRequestHandler)
-    print("Server running on port 8000...")
+    print(f"Serving on port {PORT}...")
     httpd.serve_forever()
