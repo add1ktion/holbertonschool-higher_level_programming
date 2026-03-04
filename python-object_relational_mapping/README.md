@@ -10,17 +10,26 @@
   - Results must be displayed as they are in the example below
   - Your code should not be executed when imported
 
-- **[1. Create a database](./1-filter_states.py)**
+- **[1. Filter states](./1-filter_states.py)**
 
-- Write a script that creates the database hbtn_0c_0 in your MySQL server.
-  - If the database hbtn_0c_0 already exists, your script should not fail
-  - You are not allowed to use the SELECT or SHOW statements
+- Write a script that lists all states with a name starting with N (upper N) from the database hbtn_0e_0_usa:
+  - Your script should take 3 arguments: mysql username, mysql password and database name (no argument validation needed)
+  - You must use the module MySQLdb (import MySQLdb)
+  - Your script should connect to a MySQL server running on localhost at port 3306
+  - Results must be sorted in ascending order by states.id
+  - Results must be displayed as they are in the example below
+  - Your code should not be executed when imported
 
-- **[2. Delete a database](./2-remove_database.sql)**
+- **[2. Filter states by user input](./2-my_filter_states.py)**
 
-- Write a script that deletes the database hbtn_0c_0 in your MySQL server.
-  - If the database hbtn_0c_0 doesn't exist, your script should not fail
-  - You are not allowed to use the SELECT or SHOW statements
+- Write a script that takes in an argument and displays all values in the states table of hbtn_0e_0_usa where name matches the argument.
+  - Your script should take 4 arguments: mysql username, mysql password, database name and state name searched (no argument validation needed)
+  - You must use the module MySQLdb (import MySQLdb)
+  - Your script should connect to a MySQL server running on localhost at port 3306
+  - You must use format to create the SQL query with the user input
+  - Results must be sorted in ascending order by states.id
+  - Results must be displayed as they are in the example below
+  - Your code should not be executed when imported
 
 - **[3. List tables](./3-list_tables.sql)**
 
