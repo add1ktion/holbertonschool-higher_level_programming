@@ -50,15 +50,16 @@ guillaume@ubuntu:~/$
   - Results must be displayed as they are in the example below
   - Your code should not be executed when imported
 
-- **[4. First table](./4-first_table.sql)**
+- **[4. Cities by states](./4-cities_by_state.py)**
 
-- Write a script that creates a table called first_table in the current database in your MySQL server.
-  - first_table description:
-  - id INT
-  - name VARCHAR(256)
-  - The database name will be passed as an argument of the mysql command
-  - If the table first_table already exists, your script should not fail
-  - You are not allowed to use the SELECT or SHOW statements
+- Write a script that lists all cities from the database hbtn_0e_4_usa
+  - Your script should take 3 arguments: mysql username, mysql password and database name
+  - You must use the module MySQLdb (import MySQLdb)
+  - Your script should connect to a MySQL server running on localhost at port 3306
+  - Results must be sorted in ascending order by cities.id
+  - You can use only execute() once
+  - Results must be displayed as they are in the example below
+  - Your code should not be executed when imported
 
 - **[5. Full description](./5-full_table.sql)**
 
