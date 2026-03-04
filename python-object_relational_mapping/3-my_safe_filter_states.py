@@ -2,6 +2,7 @@
 """
 Takes in arguments and displays all values in the states
 table of hbtn_0e_0_usa where name matches the argument.
+But this time, write one that is safe from MySQL injections!
 """
 import MySQLdb
 import sys
@@ -20,10 +21,10 @@ if __name__ == "__main__":
 
     cur = db.cursor()
 
-    query = ("""SELECT id, name FROM states
-                WHERE states.name LIKE BINARY '{}'
-                ORDER BY states.id ASC;""").format(state_to_find)
-    cur.execute(query)
+    query = ("""SELECT * FROM states
+                WHERE states.name = %s
+                ORDER BY states.id ASC;""")
+    cur.execute(query, (state_to_find,))
 
     query_rows = cur.fetchall()
 
