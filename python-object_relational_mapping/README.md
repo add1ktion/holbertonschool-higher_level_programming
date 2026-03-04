@@ -10,7 +10,7 @@
   - Results must be displayed as they are in the example below
   - Your code should not be executed when imported
 
-- **[1. Create a database](./1-create_database_if_missing.sql)**
+- **[1. Create a database](./1-filter_states.py)**
 
 - Write a script that creates the database hbtn_0c_0 in your MySQL server.
   - If the database hbtn_0c_0 already exists, your script should not fail
