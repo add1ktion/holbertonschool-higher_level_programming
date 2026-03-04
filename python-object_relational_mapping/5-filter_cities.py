@@ -15,7 +15,7 @@ if __name__ == "__main__":
         db=sys.argv[3]
     )
 
-    states_searched=sys.argv[4]
+    states_searched = sys.argv[4]
 
     cur = db.cursor()
 
