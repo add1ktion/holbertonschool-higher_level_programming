@@ -1,6 +1,6 @@
 #!/usr/bin/node
 /* 2-arguments.js
-Write a JavaScript script that prints the first argument passed to it
+Write a script that prints a message depending of the number of arguments passed
 */
 
 const myVar = process.argv;
